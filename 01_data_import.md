@@ -18,6 +18,10 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
+``` r
+library(haven)
+```
+
 Import first dataset
 
 ``` r
@@ -224,4 +228,15 @@ tt_df =
     "data_import_examples/LotR_Words.xlsx",
     range = "F3:H6"
   )
+```
+
+## Import SAS
+
+Read in the PULSE dataset
+
+``` r
+pulse_df = 
+  read_sas("data_import_examples/public_pulse_data.sas7bdat")
+
+pulse_df = janitor::clean_names(pulse_df)
 ```
