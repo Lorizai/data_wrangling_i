@@ -3,19 +3,16 @@ title: "Data import"
 output: github_document
 ---
 
-I'm an R Markdown document! 
-
-# Section 1
-
-Here's a **code chunk** that samples from 
-a _normal distribution_:
+This file is for doing data import
 
 ```{r}
-samp = rnorm(100)
-length(samp)
+library(tidyverse)
 ```
 
-# Section 2
+Import first dataset
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+```{r}
+litters_df = 
+  read_csv(file = "data_import_examples/FAS_litters.csv")
+```
+
